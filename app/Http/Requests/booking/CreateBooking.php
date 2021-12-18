@@ -31,8 +31,8 @@ class CreateBooking extends FormRequest
             'email' => 'required|email',
             'phoneCode' => 'required|string',
             'phoneNumber' => 'required|string|max:15',
-            'pickUp' => 'required|in:Bruxelles ville,Bruxelles Aéroport,Charleroi aéroport,Ostende Aéroport,autre',
-            'dropOff' => 'required|in:Bruxelles ville,Bruxelles Aéroport,Charleroi aéroport,Ostende Aéroport,autre',
+            'pickUp' => 'required|string',
+            'dropOff' => 'required|string',
             'otherAddressPick' => 'string|nullable',
             'otherAddressDrop' => 'string|nullable',
             'suitecaseNum' => 'required|integer',
@@ -40,7 +40,7 @@ class CreateBooking extends FormRequest
             'choiceTaxi' => 'required|in:standard,VIP',
             'time' => 'required|string',
             'payment' => 'required|in:cash,visa',
-            'estimation' => 'required|integer',
+            'estimation' => 'required|integer|nullable',
             'additionalInfo' => 'string|nullable'
         ];
     }
