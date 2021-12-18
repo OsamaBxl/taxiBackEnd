@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2021 at 11:41 AM
+-- Generation Time: Dec 18, 2021 at 01:26 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.23
 
@@ -33,9 +33,9 @@ CREATE TABLE `bookings` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phoneCode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '+32',
   `phoneNumber` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pickUp` enum('Bruxelles ville','Bruxelles Aéroport','Charleroi aéroport','Ostende Aéroport','autre') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pickUp` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `otherAddressPick` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `dropOff` enum('Bruxelles ville','Bruxelles Aéroport','Charleroi aéroport','Ostende Aéroport','autre') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dropOff` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `otherAddressDrop` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `estimation` int(20) NOT NULL,
   `suitecaseNum` int(11) NOT NULL,
@@ -72,7 +72,8 @@ INSERT INTO `bookings` (`id`, `fullName`, `email`, `phoneCode`, `phoneNumber`, `
 (17, 'ahmed', 'engahmedhamedmoham@gmail.com', '+32', '0234567899', 'autre', NULL, 'autre', NULL, 0, 1, 1, 'standard', '@Test1234', 'visa', NULL, '2021-12-11 07:12:37', '2021-12-11 07:12:37'),
 (18, 'ahmed', 'engahmedhamedmoham@gmail.com', '+32', '0234567899', 'autre', NULL, 'autre', NULL, 0, 1, 1, 'standard', '@Test1234', 'visa', NULL, '2021-12-11 07:13:13', '2021-12-11 07:13:13'),
 (19, 'ahmed', 'engahmedhamedmoham@gmail.com', '+32', '0234567899', 'autre', NULL, 'autre', NULL, 0, 1, 1, 'standard', '@Test1234', 'visa', NULL, '2021-12-11 07:13:34', '2021-12-11 07:13:34'),
-(20, 'ahmed', 'engahmedhamedmoham@gmail.com', '+32', '0234567899', 'autre', NULL, 'autre', NULL, 0, 1, 1, 'standard', '@Test1234', 'visa', NULL, '2021-12-11 07:14:46', '2021-12-11 07:14:46');
+(20, 'ahmed', 'engahmedhamedmoham@gmail.com', '+32', '0234567899', 'autre', NULL, 'autre', NULL, 0, 1, 1, 'standard', '@Test1234', 'visa', NULL, '2021-12-11 07:14:46', '2021-12-11 07:14:46'),
+(21, 'ahmed', 'engahmedhamedmoham@gmail.com', '+32', '0234567899', 'autre', NULL, 'autre', NULL, 50, 1, 1, 'standard', '@Test1234', 'visa', NULL, '2021-12-18 08:43:11', '2021-12-18 08:43:11');
 
 -- --------------------------------------------------------
 
@@ -92,8 +93,6 @@ CREATE TABLE `destinations` (
 INSERT INTO `destinations` (`id`, `city_name`) VALUES
 (1, 'Bruxelles aéroport'),
 (2, 'Charleroi aéroport    '),
-(3, 'Bruxelles aéroport'),
-(4, 'Charleroi aéroport '),
 (5, 'Ostende Aéroport'),
 (6, 'Aéroport de Liège'),
 (7, 'Aéroport d\'Anvers'),
@@ -334,7 +333,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `destinations`
