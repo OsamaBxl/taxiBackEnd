@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2021 at 10:32 AM
+-- Generation Time: Dec 18, 2021 at 11:41 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.23
 
@@ -73,6 +73,35 @@ INSERT INTO `bookings` (`id`, `fullName`, `email`, `phoneCode`, `phoneNumber`, `
 (18, 'ahmed', 'engahmedhamedmoham@gmail.com', '+32', '0234567899', 'autre', NULL, 'autre', NULL, 0, 1, 1, 'standard', '@Test1234', 'visa', NULL, '2021-12-11 07:13:13', '2021-12-11 07:13:13'),
 (19, 'ahmed', 'engahmedhamedmoham@gmail.com', '+32', '0234567899', 'autre', NULL, 'autre', NULL, 0, 1, 1, 'standard', '@Test1234', 'visa', NULL, '2021-12-11 07:13:34', '2021-12-11 07:13:34'),
 (20, 'ahmed', 'engahmedhamedmoham@gmail.com', '+32', '0234567899', 'autre', NULL, 'autre', NULL, 0, 1, 1, 'standard', '@Test1234', 'visa', NULL, '2021-12-11 07:14:46', '2021-12-11 07:14:46');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `destinations`
+--
+
+CREATE TABLE `destinations` (
+  `id` int(11) NOT NULL,
+  `city_name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `destinations`
+--
+
+INSERT INTO `destinations` (`id`, `city_name`) VALUES
+(1, 'Bruxelles aéroport'),
+(2, 'Charleroi aéroport    '),
+(3, 'Bruxelles aéroport'),
+(4, 'Charleroi aéroport '),
+(5, 'Ostende Aéroport'),
+(6, 'Aéroport de Liège'),
+(7, 'Aéroport d\'Anvers'),
+(8, 'Aéroport d\'Amsterdam-Schiphol'),
+(9, 'Aéroport de Paris-Charles-de-Gaulle'),
+(10, 'Aéroport de Lille'),
+(11, 'Aéroport Paris-Orly'),
+(12, 'Aéroport Paris Beauvais');
 
 -- --------------------------------------------------------
 
@@ -267,6 +296,12 @@ ALTER TABLE `bookings`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `destinations`
+--
+ALTER TABLE `destinations`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -300,6 +335,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `bookings`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `destinations`
+--
+ALTER TABLE `destinations`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`

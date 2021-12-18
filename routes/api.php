@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace'=>'booking'],function(){
     Route::post('createBooking/','BookingController@createBooking');
+    Route::get('getAllDestinations/','BookingController@getDestinations');
   
     
 });

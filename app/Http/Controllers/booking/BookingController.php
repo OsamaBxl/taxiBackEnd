@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\booking;
 
 use App\model\Booking;
+use App\model\Destinations;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -39,6 +40,14 @@ class BookingController extends Controller
             Mail::to("osama.abdelgayed@gmail.com")->send(new createBookingMail($request));
             $this->apiResponse("success", 'Booking created sucessfully', 201);
         } else {
+            $this->apiResponse("Failed", 'Kindly contact your adminstrator', 500);
+        }
+    }
+    public function getDestinations(){
+        $destinations=Destinations::get(['id','city_name']);
+        if($destinations){
+            $this->apiResponse("success", 'Destinations Returned sucessfully', 201,$destinations);
+        }else{
             $this->apiResponse("Failed", 'Kindly contact your adminstrator', 500);
         }
     }
