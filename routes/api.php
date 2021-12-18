@@ -20,8 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace'=>'booking'],function(){
     Route::post('createBooking/','BookingController@createBooking');
-    Route::post('updateItem/','ItemController@updateItem');
-    Route::post('createItemPhotos/','ItemController@createItemPhotos');
-    Route::post('logout/','VendorController@logout');
+  
     
 });
+Route::post('addPrice/','PriceController@seedData');
+Route::post('getPrice/','PriceController@getPrice');
