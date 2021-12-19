@@ -26,3 +26,8 @@ Route::group(['namespace'=>'booking'],function(){
 });
 Route::post('addPrice/','PriceController@seedData');
 Route::post('getPrice/','PriceController@getPrice');
+
+
+// payment Integration
+Route::get('get-checkout-id/{price}','PaymentProviderController@getCheckoutId');
+Route::get('paymentStatus/{resourcePath}/{chekoutId}','PaymentProviderController@getCheckoutId');

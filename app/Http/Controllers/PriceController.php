@@ -22,7 +22,7 @@ class PriceController extends Controller
             'price'=>$request->price,
         ]);
         if($price){
-            $this->apiResponse("Success",'Price Entered successfully',200); 
+            $this->apiResponse("Success",'Price Entered successfully',201); 
         }else{
             $this->apiResponse("error",'DB Error',503); 
         }
