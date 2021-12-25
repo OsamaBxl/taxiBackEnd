@@ -18,16 +18,16 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::group(['namespace'=>'booking'],function(){
-    Route::post('createBooking/','BookingController@createBooking');
-    Route::get('getAllDestinations/','BookingController@getDestinations');
-  
-    
+Route::group(['namespace' => 'booking'], function () {
+    Route::post('createBooking/', 'BookingController@createBooking');
+    Route::get('getAllDestinations/', 'BookingController@getDestinations');
 });
-Route::post('addPrice/','PriceController@seedData');
-Route::post('getPrice/','PriceController@getPrice');
+Route::post('addPrice/', 'PriceController@seedData');
+Route::post('getPrice/', 'PriceController@getPrice');
 
 
 // payment Integration
-Route::get('get-checkout-id/{price}','PaymentProviderController@getCheckoutId');
-Route::get('paymentStatus/{resourcePath}/{chekoutId}','PaymentProviderController@getCheckoutId');
+Route::get('get-checkout-id/{price}', 'PaymentProviderController@getCheckoutId');
+Route::get('paymentStatus/{resourcePath}/{chekoutId}', 'PaymentProviderController@getCheckoutId');
+
+Route::post('send-message', 'ContactController@sendEmail')->name('contact.send');

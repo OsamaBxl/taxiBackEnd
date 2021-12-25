@@ -43,11 +43,12 @@ class BookingController extends Controller
             $this->apiResponse("Failed", 'Kindly contact your adminstrator', 500);
         }
     }
-    public function getDestinations(){
-        $destinations=Destinations::get(['id','city_name']);
-        if($destinations){
-            $this->apiResponse("success", 'Destinations Returned sucessfully', 201,$destinations);
-        }else{
+    public function getDestinations()
+    {
+        $destinations = Destinations::get(['id', 'city_name']);
+        if ($destinations) {
+            $this->apiResponse("success", 'Destinations Returned sucessfully', 201, $destinations);
+        } else {
             $this->apiResponse("Failed", 'Kindly contact your adminstrator', 500);
         }
     }

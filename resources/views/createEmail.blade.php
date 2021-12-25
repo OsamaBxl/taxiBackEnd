@@ -67,24 +67,22 @@
         <h1>Booking Request Email</h1>
         <h4>New Booking Request</h4>
         <p> Booking Informations :</p>
-       <p><b> Full Name</b> : {{$request->fullName}}</p>
-       <p> Email : {{$request->email}}</p>
-       <p> Phone Number : {{$request->phone}}</p>
-       <p> Pick up Location : {{$request->pickUp}}</p>
-       @if ($request->pickUp=="autre")
-       <p> other Pick up Location : {{$request->otherAddressPick}}</p>   
-       @endif
-       <p> Drop off Location : {{$request->dropOff}}</p>
-       @if ($request->dropOff=="autre")
-       <p> other Drop off Location : {{$request->otherAddressDrop}}</p>   
-       @endif
-       <p> Number Of Suitcases : {{$request->suitecaseNum}}</p>
-       <p> Number Of Persons : {{$request->personsNum}}</p>
-       <p> Taxi Type : {{$request->choiceTaxi}}</p>
-       <p> Payment Type : {{$request->payment}}</p>
+        <p><b> Full Name</b> : {{$request->fullName}}</p>
+        <p> Email : {{$request->email}}</p>
+        <p> Phone Number : {{$request->phone}}</p>
+        <p> Pick up Location : {{$request->pickUp}}</p>
+        @if ($request->pickUp=="autre")
+        <p> other Pick up Location : {{$request->otherAddressPick}}</p>   
+        @endif
+        <p> Drop off Location : {{$request->dropOff}}</p>
+        @if ($request->dropOff=="autre")
+        <p> other Drop off Location : {{$request->otherAddressDrop}}</p>   
+        @endif
+        <p> Number Of Suitcases : {{$request->suitecaseNum}}</p>
+        <p> Number Of Persons : {{$request->personsNum}}</p>
+        <p> Taxi Type : {{$request->choiceTaxi}}</p>
+        <p> Payment Type : {{$request->payment}}</p>
         <p> Estimation : {{$request->estimation}}</p>
-       <p> additional Info (Optional) : {{$request->additionalInfo}}</p>,
-       
-
+        <p> additional Info (Optional) : {{$request->additionalInfo}}</p>,       
     </body>
 </html>
