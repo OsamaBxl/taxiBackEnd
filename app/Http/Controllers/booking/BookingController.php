@@ -8,7 +8,7 @@ use App\model\Destinations;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\booking\CreateBooking;
-use App\Traits\ApiResponse;
+use App\traits\ApiResponse;
 
 use App\Mail\createBookingMail;
 use Illuminate\Support\Facades\Mail;
