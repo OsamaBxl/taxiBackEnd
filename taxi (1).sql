@@ -33,10 +33,8 @@ CREATE TABLE `bookings` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phoneCode` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '+32',
   `phoneNumber` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pickUp` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `otherAddressPick` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `dropOff` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `otherAddressDrop` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `from` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `to` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `estimation` int(20) NOT NULL,
   `suitecaseNum` int(11) NOT NULL,
   `personsNum` int(11) NOT NULL,
@@ -52,7 +50,7 @@ CREATE TABLE `bookings` (
 -- Dumping data for table `bookings`
 --
 
-INSERT INTO `bookings` (`id`, `fullName`, `email`, `phoneCode`, `phoneNumber`, `pickUp`, `otherAddressPick`, `dropOff`, `otherAddressDrop`, `estimation`, `suitecaseNum`, `personsNum`, `choiceTaxi`, `time`, `payment`, `additionalInfo`, `created_at`, `updated_at`) VALUES
+INSERT INTO `bookings` (`id`, `fullName`, `email`, `phoneCode`, `phoneNumber`, `from`, `to`, `estimation`, `suitecaseNum`, `personsNum`, `choiceTaxi`, `time`, `payment`, `additionalInfo`, `created_at`, `updated_at`) VALUES
 (1, 'ahmed', 'engahmedhamedmoham@gmail.com', '+32', '1234567899', 'autre', NULL, 'autre', NULL, 0, 1, 1, 'standard', '@Test1234', 'visa', NULL, '2021-12-08 17:48:14', '2021-12-08 17:48:14'),
 (2, 'ahmed', 'engahmedhamedmoham@gmail.com', '+32', '1234567899', 'autre', NULL, 'autre', NULL, 0, 1, 1, 'standard', '@Test1234', 'visa', NULL, '2021-12-08 18:00:44', '2021-12-08 18:00:44'),
 (3, 'ahmed', 'engahmedhamedmoham@gmail.com', '+32', '1234567899', 'autre', NULL, 'autre', NULL, 0, 1, 1, 'standard', '@Test1234', 'visa', NULL, '2021-12-11 06:58:18', '2021-12-11 06:58:18'),

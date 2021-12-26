@@ -23,13 +23,13 @@ class BookingController extends Controller
             'email' => $request->email,
             'phoneCode' => $request->phoneCode,
             'phoneNumber' => $request->phoneNumber,
-            'pickUp' => $request->pickUp,
-            'otherAddressPick' => $request->otherAddressPick,
-            'dropOff' => $request->dropOff,
-            'otherAddressDrop' => $request->otherAddressDrop,
+            'from' => $request->from,
+            'to' => $request->to,
             'suitecaseNum' => $request->suitecaseNum,
             'personsNum' => $request->personsNum,
             'choiceTaxi' => $request->choiceTaxi,
+            'seigeEnfant' => $request->seigeEnfant,
+            'vol' => $request->vol,
             'time' => $request->time,
             'payment' => $request->payment,
             'estimation' => $request->estimation,
@@ -37,7 +37,7 @@ class BookingController extends Controller
         ]);
 
         if ($booking) {
-            Mail::to("osama.abdelgayed@gmail.com")->send(new createBookingMail($request));
+            Mail::to("contact@airportcab.be")->send(new createBookingMail($request));
             $this->apiResponse("success", 'Booking created sucessfully', 201);
         } else {
             $this->apiResponse("Failed", 'Kindly contact your adminstrator', 500);

@@ -70,14 +70,8 @@
         <p><b> Full Name</b> : {{$request->fullName}}</p>
         <p> Email : {{$request->email}}</p>
         <p> Phone Number : {{$request->phone}}</p>
-        <p> Pick up Location : {{$request->pickUp}}</p>
-        @if ($request->pickUp=="autre")
-        <p> other Pick up Location : {{$request->otherAddressPick}}</p>   
-        @endif
-        <p> Drop off Location : {{$request->dropOff}}</p>
-        @if ($request->dropOff=="autre")
-        <p> other Drop off Location : {{$request->otherAddressDrop}}</p>   
-        @endif
+        <p> Pick up Location : {{$request->from}}</p>
+        <p> Destination : {{$request->to}}</p>
         <p> Number Of Suitcases : {{$request->suitecaseNum}}</p>
         <p> Number Of Persons : {{$request->personsNum}}</p>
         <p> Taxi Type : {{$request->choiceTaxi}}</p>

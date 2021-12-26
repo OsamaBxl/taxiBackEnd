@@ -19,14 +19,14 @@ class CreateBookingsTable extends Migration
             $table->string('email');
             $table->string('phoneCode')->default('+32');
             $table->string('phoneNumber', 15);
-            $table->enum('pickUp', ['Bruxelles ville', 'Bruxelles Aéroport', 'Charleroi aéroport', 'Ostende Aéroport', 'autre']);
-            $table->string('otherAddressPick')->nullable();
-            $table->enum('dropOff', ['Bruxelles ville', 'Bruxelles Aéroport', 'Charleroi aéroport', 'Ostende Aéroport', 'autre']);
-            $table->string('otherAddressDrop')->nullable();
+            $table->string('from');
+            $table->string('to');
             $table->integer('suitecaseNum');
             $table->integer('personsNum');
             $table->enum('choiceTaxi', ['standard', 'VIP'])->default('standard');
             $table->string('time');
+            $table->string('seigeEnfant');
+            $table->string('vol');
             $table->enum('payment', ['cash', 'visa'])->default('cash');
             $table->integer('estimation');
             $table->text('additionalInfo')->nullable();

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\ContactMail;
+use App\Mail\contactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\traits\ApiResponse;
@@ -30,7 +30,7 @@ class ContactController extends Controller
         // return back()->with('message_sent', 'Your message has been sent Successfully');
 
         if ($details) {
-            Mail::to("osama.bruxelles@gmail.com")->send(new ContactMail($details));
+            Mail::to("contact@airportcab.be")->send(new ContactMail($details));
             $this->apiResponse("success", 'Your message has been sent Successfully', 200);
         } else {
             $this->apiResponse("Failed", 'Message was not sent', 500);
