@@ -21,13 +21,13 @@ class CreateBookingsTable extends Migration
             $table->string('phoneNumber', 15);
             $table->string('from');
             $table->string('to');
-            $table->integer('suitecaseNum');
+            $table->integer('suitecaseNum')->default(0);
             $table->integer('personsNum');
             $table->enum('choiceTaxi', ['standard', 'VIP'])->default('standard');
             $table->string('time');
             $table->string('seigeEnfant');
-            $table->string('vol');
-            $table->enum('payment', ['cash', 'visa'])->default('cash');
+            $table->string('vol')->nullable();
+            // $table->enum('payment', ['cash', 'visa'])->default('cash');
             $table->integer('estimation');
             $table->text('additionalInfo')->nullable();
             $table->timestamps();

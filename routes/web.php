@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\booking\BookingController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MollieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('contact-us', 'ContactController@contact');
+
+Route::middleware("signed")->group(function () {
+    Route::get("refund/{booking_id}", "booking\BookingController@refund")->name("booking.refund");
+});

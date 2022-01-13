@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MollieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,14 +21,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'booking'], function () {
     Route::post('createBooking/', 'BookingController@createBooking');
-    Route::get('getAllDestinations/', 'BookingController@getDestinations');
+    Route::get('payment-success/{booking_id}', 'BookingController@paymentSuccess')->name('payment.success');
+    // Route::get('getAllDestinaions/', 'BookingController@getDestinations');
 });
 Route::post('addPrice/', 'PriceController@seedData');
 Route::post('getPrice/', 'PriceController@getPrice');
 
 
 // payment Integration
-Route::get('get-checkout-id/{price}', 'PaymentProviderController@getCheckoutId');
-Route::get('paymentStatus/{resourcePath}/{chekoutId}', 'PaymentProviderController@getCheckoutId');
+// Route::get('get-checkout-id/{price}', 'PaymentProviderController@getCheckoutId');
+// Route::get('paymentStatus/{resourcePath}/{chekoutId}', 'PaymentProviderController@getCheckoutId');
 
 Route::post('send-message', 'ContactController@sendEmail')->name('contact.send');

@@ -13,70 +13,43 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                color: #3c4042;
                 font-family: 'Nunito', sans-serif;
-                font-weight: 200;
+                font-weight: 150;
                 height: 100vh;
                 margin: 0;
             }
 
-            .full-height {
-                height: 100vh;
+            .heading {
+                padding: 40px 0;
+                width: 100%;
+                min-width: 400px;
+                background-color: #8da1fa00;
+                text-align: center
             }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
         </style>
     </head>
     <body>
-        <h1>Booking Request Email</h1>
-        <h4>New Booking Request</h4>
-        <p> Booking Informations :</p>
-        <p><b> Full Name</b> : {{$request->fullName}}</p>
-        <p> Email : {{$request->email}}</p>
-        <p> Phone Number : {{$request->phone}}</p>
-        <p> Pick up Location : {{$request->from}}</p>
-        <p> Destination : {{$request->to}}</p>
-        <p> Number Of Suitcases : {{$request->suitecaseNum}}</p>
-        <p> Number Of Persons : {{$request->personsNum}}</p>
-        <p> Taxi Type : {{$request->choiceTaxi}}</p>
-        <p> Payment Type : {{$request->payment}}</p>
-        <p> Estimation : {{$request->estimation}}</p>
-        <p> additional Info (Optional) : {{$request->additionalInfo}}</p>,       
+        <div class="heading">
+            <h1 style="padding: 30px 0;margin:0 ;width: 100%; background-color: blueviolet; color: white;
+                text-align: center">Booking Request Email</h1>
+        </div>
+          <hr>
+        <h4> Booking Informations :</h4>
+        <p><b> Nom</b> : {{$request->fullName}}</p>
+        <p> <b>Email</b> : {{$request->email}}</p>
+        <p> <b>Numéro de tél </b>: {{$request->phone}}</p>
+        <p> <b>Départ</b> : {{$request->from}}</p>
+        <p><b> Déstination </b>: {{$request->to}}</p>
+        <p> <b>Estimation</b> : {{$request->estimation}} Euros</p>
+        <p><b> Date </b>: {{$request->time}}</p>
+        <p> <b>Nombre de Valise</b> : {{$request->suitecaseNum}}</p>
+        <p> <b>Nombre de personnes</b> : {{$request->personsNum}}</p>
+        <p> <b>Type de taxi</b> : {{$request->choiceTaxi}}</p>
+        <p> <b>Sèige Enfant</b> : {{$request->seigeEnfant}}</p>
+        <p> <b>Numéro de vol</b> : {{$request->vol}}</p>
+        <p> <b>Payment Type</b>  : {{$request->payment}}</p>
+        <p> <b>Informations complémentaires</b> : {{$request->additionalInfo}}</p>,       
     </body>
 </html>

@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\model\Booking;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -16,10 +17,11 @@ class createBookingMail extends Mailable
      *
      * @return void
      */
-    private $request;
-    public function __construct($request)
+    private $booking;
+    public function __construct($id)
     {
-        $this->request = $request;
+
+        $this->booking = Booking::find($id);
     }
 
     /**
@@ -29,11 +31,12 @@ class createBookingMail extends Mailable
      */
     public function build()
     {
-        $str = $this->request->phoneNumber;
+
+        $str = $this->booking->phoneNumber;
         if ($str[0] == "0") {
             $str = ltrim($str, $str[0]);
         }
-        $this->request->phone = $this->request->phoneCode . $str;
-        return $this->view('createEmail')->with(['request' => $this->request]);
+        $this->booking->phone = $this->booking->phoneCode . $str;
+        return $this->view('createEmail')->with(['request' => $this->booking]);
     }
 }

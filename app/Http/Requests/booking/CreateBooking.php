@@ -39,7 +39,7 @@ class CreateBooking extends FormRequest
             'time' => 'required|string',
             'seigeEnfant' => 'string',
             'vol' => 'string',
-            'payment' => 'required|in:cash,visa',
+
             'estimation' => 'required|integer|nullable',
             'additionalInfo' => 'string|nullable'
         ];
